@@ -31,7 +31,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "author": "Aman Jain",
+  "author": "Aman Jain <aman.j@safepath.ai> (https://aman.wiki)",
   "license": "Apache-2.0",
   "dependencies": {
     "tslib": "~2.0.3"
@@ -48,5 +48,10 @@
     "dummy-data-generator",
     "lorem ipsum",
     "lorem"
-  ]
+  ],
+  "homepage": "https://github.com/jn-aman/dummy-data-generator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jn-aman/dummy-data-generator"
+  }
 }
