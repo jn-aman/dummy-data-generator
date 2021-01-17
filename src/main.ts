@@ -21,7 +21,7 @@ interface ObjectData {
 
 const getCSV = (jsonArray: ObjectData[]): string => {
   const items = jsonArray;
-  const replacer = (value: string) => (value === null ? '' : value);
+  const replacer = (_key:string,value: string) => (value === null ? '' : value);
   const header = Object.keys(items[0]);
   const csv = [
     header.join(','),
@@ -77,5 +77,30 @@ const dataGenerator = ({
   }
   return isCSV ? getCSV(finalData) : finalData;
 };
+const columnData = {
+  name: {
+    type: 'word',
+    length: 10,
+  },
+  city: {
+    type: 'word',
+    length: 7,
+  },
+  state: {
+    type: 'paragraph',
+    length: 2,
+  },
+  'about-me': {
+    type: 'paragraph',
+    length: 100,
+  },
+};
+console.log(
+  dataGenerator({
+    columnData,
+    count: 2,
+    isCSV:true
+  }),
+);
 
 export default dataGenerator;

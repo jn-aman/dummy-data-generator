@@ -39,9 +39,85 @@ interface ColumnData {
 }
 infinite number of columns supported.
 ```
+## Example 
+1. Array of JSON Objects
+```
+import dataGenerator from 'dummy-data-generator';
+const columnData = {
+  name: {
+    type: 'word',
+    length: 10,
+  },
+  city: {
+    type: 'word',
+    length: 7,
+  },
+  state: {
+    type: 'paragraph',
+    length: 2,
+  },
+  'about-me': {
+    type: 'paragraph',
+    length: 100,
+  },
+};
+console.log(
+  dataGenerator({
+    columnData,
+    count: 2,
+  }),
+);
+// output -> [
+  {
+    name: 'rocomebifi',
+    city: 'yubolup',
+    state: 'Runanecic keyibaqi.',
+    'about-me': 'Kuropopa ledeb detodamehu biro wahomecab cido vas jilod cubo nonobidin caqedelapa mamu. Ropimawa ducopec rixilu nuc. Suh. Hop dula rubuzirego te. Ludumobebi ru pomub meloc butitodeno lebodid. Tunubirobu nu yodonereci vat toco regebabob cuhuliqo bij wuta. Dirul kabar ne puhi ned mala pupamur hikisamuta ni. Pepajej disorap nepi pica daroge. Ra. Pa bona tit ruhofo kotal zeboradiko. Bowe bobupa mapeyib. Nocepati yosigomi ba re baxemi gape muvopicagu. Nagip nulakepow jukobon nibi dihebipuba mohoher ganobucoti ma budacowuya lokabenupi bepadumaxu bo pexu capecirab luhebire ronoqumeh yo run ru. Tumibu hibu nilip poke gevena corereri sozapalor litasi. Pu bila wodi rapi po lodotug.'
+  },
+  {
+    name: 'nirobekuza',
+    city: 'duqexin',
+    state: 'Be pebelolaxo.',
+    'about-me': 'Melicew lolapux wolihey xiqe cukurelagu zi nireqaneca. Lapepabiyo camenac da nepipogad paruto. Beb nani larimotaba pijo hotuto kil wacuyep bibabe nenanec suhapur dohap pom tubade hubub beyiban po babeqizaca vefapot sagat nirora cu niteze riyo padi dorina relelob taxin bocixejo xocunuri gihagag cib joxa. Sutodesalu vureme huq gizoca ruhopuyuye deh mutamol norepe cer funecem. Rucivom gas ruwe moladuciba hoyobaca. Mamumo redile. Lehidupal rexeno kil xob paloben depeda gobacam bapepegek daci gicote jenidu zonamape. Diromi. Ganim rapeva mub cah tucaxihete rili coca mego kibupi ru covemap milicokihe. Limibabel fa keba pidamupa nuz bud riherire rizazapa buciboh. Tulir tod dudoca hobeba puvuta..'
+  }
+]
+```
+2. CSV String
+```
+import dataGenerator from 'dummy-data-generator';
+const columnData = {
+  name: {
+    type: 'word',
+    length: 10,
+  },
+  city: {
+    type: 'word',
+    length: 7,
+  },
+  state: {
+    type: 'paragraph',
+    length: 2,
+  },
+  'about-me': {
+    type: 'paragraph',
+    length: 100,
+  },
+};
+console.log(
+  dataGenerator({
+    columnData,
+    count: 2,
+    isCSV:true
+  }),
+);
+// output ->
+name,city,state,about-me
+"werubepiku","delupil","Wecimibupo caronoti.","Cocavu goqi qubugop vizac. Niba mine ku riburutori barocizide celureged cecutuwo cuti tulixo. Rimobunec pudubediju tecabo yit bupuyasu penicu le molotolap mocobo rip xufobafare moza lebahuja tomela. Domenodal mibexe qakol cuducu gace xadaganebu. Doradalopu wogebif nasupotiki. Nenete kibixulopu tebamiqec vomuqar. Musasiv nimeba capena pocara zububeki becup vedul balaru libaduvoc kubay piw bugenoteci. Besac qed. Cobe godutebise behima deqidupi pos behab danu dub ba dugutore logidepol dorop xatapit few cucu yoyudepo qobuludam cibalipi mucibepe. Bo hicor mob biluqacuma polidu pohi gek tagejotay pomimuref pukilasec jobak rabamubop. Balijumi juwuro robu pid pilis kalozemup xub duhikoqaca vidayib pivulibape bah sana kuz qodiwusub bipabebaw."
+"bivimopabi","dovadod","Mojecelicu yurakogaro.","Melep quhowevab doropuno tijedecucu mirukeran. Doxokopuce digecaxur bemipi geri bam monatob pubac takomacobo pesonaqow mulum qunidol wunonedap robo pokulu gibom nam pepa car ripok lutiye tibe nelur gododoq xenicecob po dolayoce todeyumodi hubulim da cudi wocora. Buroked tuqol zeri robetoqa fejoya pogi wuwon loligocina rebija coceparab bob rupo pegem peye dumec be hemuroce hepipiqubi kil. Tenobam pecedak jopiwefope nogemed run tobubu rarububegi bolipemar nudalub. Zeceb didi ka yinemeq fopoc no riginunazo keqegir namubabu led bomesulub vulonipeb gilecex yo haberurama gi. Pomebabebi xifedakidu le derup famin palakif denin rapa lalatane woj. Nicuri cay. Tetefe cec cebebuf wibebuvemu lalobalido cidavu wuf cajolux."
+
 ## License
 
-Copyright (c) 2012-2020 Aman Jain <aman.j@safepath.ai> 
+Copyright (c) 2012-2020 Aman Jain <aman.j@safepath.ai>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
