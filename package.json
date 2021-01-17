@@ -1,6 +1,6 @@
 {
   "name": "dummy-data-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minimalistic dummy-data-generator.",
   "main": "build/src/main.js",
   "types": "build/src/index.d.ts",
