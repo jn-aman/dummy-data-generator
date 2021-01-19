@@ -1,7 +1,7 @@
 import dataGenerator from '../src/main';
 
 describe('createData function', () => {
-  test('testing modiule array', () => {
+  test('testing module array', () => {
     const columnData = {
       name: {
         type: 'word',
@@ -30,7 +30,7 @@ describe('createData function', () => {
     ).toBe(2);
   });
 
-  test('testing modiule csv', () => {
+  test('testing module csv', () => {
     const columnData = {
       name: {
         type: 'word',
@@ -54,6 +54,87 @@ describe('createData function', () => {
       typeof dataGenerator({
         columnData,
         count: 2,
+        isCSV: true,
+      }),
+    ).toBe('string');
+  });
+
+  test('testing module count and array', () => {
+    const columnData = {
+      name: {
+        type: 'word',
+        length: 10,
+      },
+      city: {
+        type: 'word',
+        length: 7,
+      },
+      state: {
+        type: 'paragraph',
+        length: 2,
+      },
+      'about-me': {
+        type: 'paragraph',
+        length: 100,
+      },
+    };
+
+    expect(
+      typeof dataGenerator({
+        columnData,
+      }),
+    ).toBe('object');
+  });
+
+  test('testing module count and isCSV', () => {
+    const columnData = {
+      name: {
+        type: 'word',
+        length: 10,
+      },
+      city: {
+        type: 'word',
+        length: 7,
+      },
+      state: {
+        type: 'paragraph',
+        length: 2,
+      },
+      'about-me': {
+        type: 'paragraph',
+        length: 100,
+      },
+    };
+
+    expect(
+      typeof dataGenerator({
+        columnData,
+        isCSV: true,
+      }),
+    ).toBe('string');
+  });
+
+
+  test('testing module missing type and length', () => {
+    const columnData = {
+      name: {},
+      city: {
+        type: 'word',
+        length: 7,
+      },
+      state: {
+        type: 'paragraph',
+        length: 2,
+      },
+      'about-me': {
+        type: 'paragraph',
+        length: 100,
+      },
+    };
+
+    expect(
+      typeof dataGenerator({
+        columnData,
         isCSV: true,
       }),
     ).toBe('string');

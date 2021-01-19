@@ -10,8 +10,8 @@ import { createParagraph, createWord } from './createData';
 
 interface ColumnData {
   [key: string]: {
-    type: string;
-    length: string | number;
+    type?: string;
+    length?: string | number;
   };
 }
 
@@ -21,13 +21,12 @@ interface ObjectData {
 
 const getCSV = (jsonArray: ObjectData[]): string => {
   const items = jsonArray;
-  const replacer = (_key:string,value: string) => (value === null ? '' : value);
   const header = Object.keys(items[0]);
   const csv = [
     header.join(','),
     ...items.map((row) =>
       header
-        .map((fieldName) => JSON.stringify(row[fieldName], replacer))
+        .map((fieldName) => JSON.stringify(row[fieldName]))
         .join(','),
     ),
   ].join('\r\n');
@@ -68,8 +67,8 @@ const dataGenerator = ({
   isCSV = false,
 }: {
   columnData: ColumnData;
-  count: number;
-  isCSV: boolean;
+  count?: number;
+  isCSV?: boolean;
 }): string | ObjectData[] => {
   let finalData = [];
   for (let index = 0; index < count; index++) {
