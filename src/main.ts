@@ -77,30 +77,5 @@ const dataGenerator = ({
   }
   return isCSV ? getCSV(finalData) : finalData;
 };
-const columnData = {
-  name: {
-    type: 'word',
-    length: 10,
-  },
-  city: {
-    type: 'word',
-    length: 7,
-  },
-  state: {
-    type: 'paragraph',
-    length: 2,
-  },
-  'about-me': {
-    type: 'paragraph',
-    length: 100,
-  },
-};
-console.log(
-  dataGenerator({
-    columnData,
-    count: 2,
-    isCSV:true
-  }),
-);
 
 export default dataGenerator;
