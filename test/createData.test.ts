@@ -1,24 +1,23 @@
-/* eslint-disable jest/no-try-expect */
-/* eslint-disable jest/no-conditional-expect */
-import dataGenerator from '../src/main';
 
-describe('createData function', () => {
-  test('testing module array', () => {
+import dataGenerator from "../src/main";
+
+describe("createData function", () => {
+  test("testing module array", () => {
     const columnData = {
       name: {
-        type: 'word',
+        type: "word",
         length: 10,
       },
       city: {
-        type: 'word',
+        type: "word",
         length: 7,
       },
       state: {
-        type: 'paragraph',
+        type: "paragraph",
         length: 2,
       },
-      'about-me': {
-        type: 'paragraph',
+      "about-me": {
+        type: "paragraph",
         length: 100,
       },
     };
@@ -32,22 +31,22 @@ describe('createData function', () => {
     ).toBe(2);
   });
 
-  test('testing module csv', () => {
+  test("testing module csv", () => {
     const columnData = {
       name: {
-        type: 'word',
+        type: "word",
         length: 10,
       },
       city: {
-        type: 'word',
+        type: "word",
         length: 7,
       },
       state: {
-        type: 'paragraph',
+        type: "paragraph",
         length: 2,
       },
-      'about-me': {
-        type: 'paragraph',
+      "about-me": {
+        type: "paragraph",
         length: 100,
       },
     };
@@ -58,31 +57,31 @@ describe('createData function', () => {
         count: 2,
         isCSV: true,
       }),
-    ).toBe('string');
+    ).toBe("string");
   });
 
-  test('testing module count and array', () => {
+  test("testing module count and array", () => {
     const columnData = {
       name: {
-        type: 'word',
+        type: "word",
         length: 10,
       },
       city: {
-        type: 'word',
+        type: "word",
         length: 7,
       },
       state: {
-        type: 'paragraph',
+        type: "paragraph",
         length: 2,
       },
-      'about-me': {
-        type: 'paragraph',
+      "about-me": {
+        type: "paragraph",
         length: 100,
       },
       cisty: {
-        type: 'enum',
+        type: "enum",
         length: 2,
-        values: ['sdf', 'asd'],
+        values: ["sdf", "asd"],
       },
     };
 
@@ -90,25 +89,25 @@ describe('createData function', () => {
       typeof dataGenerator({
         columnData,
       }),
-    ).toBe('object');
+    ).toBe("object");
   });
 
-  test('testing module count and isCSV', () => {
+  test("testing module count and isCSV", () => {
     const columnData = {
       name: {
-        type: 'word',
+        type: "word",
         length: 10,
       },
       city: {
-        type: 'word',
+        type: "word",
         length: 7,
       },
       state: {
-        type: 'paragraph',
+        type: "paragraph",
         length: 2,
       },
-      'about-me': {
-        type: 'paragraph',
+      "about-me": {
+        type: "paragraph",
         length: 100,
       },
     };
@@ -118,10 +117,10 @@ describe('createData function', () => {
         columnData,
         isCSV: true,
       }),
-    ).toBe('string');
+    ).toBe("string");
   });
 
-  test('testing module missing data', () => {
+  test("testing module missing data", () => {
     const columnData = {};
 
     try {
@@ -132,19 +131,18 @@ describe('createData function', () => {
         }),
       ).toThrow();
     } catch (e) {
-      // eslint-disable-next-line jest/valid-expect
-      expect(typeof e === 'object');
+      expect(typeof e === "object");
     }
   });
 
-  test('testing module missing sub data', () => {
+  test("testing module missing sub data", () => {
     try {
       expect(() =>
         dataGenerator({
           columnData: {
             name: {},
             city: {
-              type: 'sdf',
+              type: "sdf",
               length: 7,
             },
           },
@@ -152,61 +150,60 @@ describe('createData function', () => {
         }),
       ).toThrow();
     } catch (e) {
-      // eslint-disable-next-line jest/valid-expect
-      expect(typeof e === 'object');
+      expect(typeof e === "object");
     }
   });
 
-  test('testing module missing type and length', () => {
+  test("testing module missing type and length", () => {
     const columnData = {
       name: {},
       city: {
-        type: 'word',
+        type: "word",
         length: 7,
       },
       state: {
-        type: 'paragraph',
+        type: "paragraph",
         length: 2,
       },
-      'about-me': {
-        type: 'paragraph',
+      "about-me": {
+        type: "paragraph",
         length: 100,
       },
       nadme: {
-        type: 'name',
+        type: "name",
         length: 100,
       },
       enum: {
-        type: 'enum',
+        type: "enum",
         length: 100,
-        value: ['asd'],
+        value: ["asd"],
       },
       date: {
-        type: 'date',
+        type: "date",
         length: 100,
       },
       randomNumber: {
-        type: 'randomNumber',
+        type: "randomNumber",
         length: 10,
       },
       randomNumberOfGivenLength: {
-        type: 'randomNumberOfGivenLength',
+        type: "randomNumberOfGivenLength",
         length: 10,
       },
       url: {
-        type: 'url',
+        type: "url",
         length: 10,
       },
       email: {
-        type: 'email',
+        type: "email",
         length: 10,
       },
       domainName: {
-        type: 'domainName',
+        type: "domainName",
         length: 10,
       },
       ipAddress: {
-        type: 'ipAddress',
+        type: "ipAddress",
         length: 10,
       },
     };
@@ -216,6 +213,6 @@ describe('createData function', () => {
         columnData,
         isCSV: true,
       }),
-    ).toBe('string');
+    ).toBe("string");
   });
 });

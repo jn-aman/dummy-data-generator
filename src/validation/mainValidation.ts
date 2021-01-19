@@ -7,6 +7,6 @@ const schema = {
     $$root: true,
     type: "object",
     minProps: 1
-}
+};
 
 export const mainValidationSchema = v.compile(schema);

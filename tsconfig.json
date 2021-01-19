@@ -18,9 +18,10 @@
     "noImplicitThis": false,
     "strictNullChecks": false,
     "skipLibCheck": true,
+    "declaration": true,
   },
   "include": [
     "src/**/*",
-    "__tests__/**/*"
+    "test/**/*"
   ]
 }

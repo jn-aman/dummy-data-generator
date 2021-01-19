@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const Validator = require('fastest-validator');
+const Validator = require("fastest-validator");
 
 const v = new Validator({
   useNewCustomCheckerFunction: true,
@@ -8,27 +8,27 @@ const v = new Validator({
 
 const schema = {
   type: {
-    type: 'enum',
+    type: "enum",
     values: [
-      'word',
-      'paragraph',
-      'date',
-      'randomNumber',
-      'randomNumberOfGivenLength',
-      'domainName',
-      'email',
-      'ipAddress',
-      'name',
-      'enum',
-      'url',
+      "word",
+      "paragraph",
+      "date",
+      "randomNumber",
+      "randomNumberOfGivenLength",
+      "domainName",
+      "email",
+      "ipAddress",
+      "name",
+      "enum",
+      "url",
     ],
     optional: true,
     trim: true,
   },
-  length: 'number|optional|positive',
+  length: "number|optional|positive",
   values: {
-    type: 'array',
-    items: ['string', 'number'],
+    type: "array",
+    items: ["string", "number"],
     min: 1,
     optional: true,
   },

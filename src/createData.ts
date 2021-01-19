@@ -1,5 +1,5 @@
-const consonants = 'bcdfghjklmnpqrstvwxyzbpcrtpcrddrtplmnplmnbbcbcdrbnmklhgd';
-const vowels = 'aeiou';
+const consonants = "bcdfghjklmnpqrstvwxyzbpcrtpcrddrtplmnplmnbbcbcdrbnmklhgd";
+const vowels = "aeiou";
 function _jsUcfirst(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -7,21 +7,21 @@ export const createWord=(
   length: number,
   capitalize = false,
 ): string => {
-  let word = '';
-    let currently = 'consonants';
+  let word = "";
+    let currently = "consonants";
     for (let i = 0; i < length; i++) {
-      if (currently === 'consonants') {
+      if (currently === "consonants") {
         word += consonants.substr(
           Math.floor(Math.random() * consonants.length),
           1,
         );
-        currently = 'vowels';
+        currently = "vowels";
       } else {
         word += vowels.substr(
           Math.floor(Math.random() * vowels.length),
           1,
         );
-        currently = 'consonants';
+        currently = "consonants";
       }
     }
   
@@ -29,9 +29,9 @@ export const createWord=(
     word = _jsUcfirst(word);
   }
   return word;
-}
+};
 export function createParagraph(length: number): string {
-  let paragraph = '';
+  let paragraph = "";
   let capitalizeNextWord = true;
   for (let i = 0; i < length; i++) {
     paragraph += createWord(
@@ -39,14 +39,14 @@ export function createParagraph(length: number): string {
       capitalizeNextWord,
     );
     if (Math.floor(Math.random() * 9) < 1) {
-      paragraph += '. ';
+      paragraph += ". ";
       capitalizeNextWord = true;
     } else {
-      paragraph += ' ';
+      paragraph += " ";
       capitalizeNextWord = false;
     }
   }
-  return paragraph.trim() + '.';
+  return paragraph.trim() + ".";
 }
 
 
