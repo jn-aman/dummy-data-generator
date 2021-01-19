@@ -1,5 +1,7 @@
 # dummy-data-generator
 
+[![Build Status](https://travis-ci.com/jn-aman/dummy-data-generator.svg?branch=main)](https://travis-ci.com/jn-aman/dummy-data-generator) [![codecov](https://codecov.io/gh/jn-aman/dummy-data-generator/branch/main/graph/badge.svg?token=VFH66277WW)](https://codecov.io/gh/jn-aman/dummy-data-generator)
+
 `dummy-data-generator` is a JavaScript module for generating passages of lorem
 ipsum text. It returns array of JSON object/CSV string.
 
@@ -12,6 +14,7 @@ npm i dummy-data-generator
 ```
 
 ## Using the Function
+
 ```
 import  dataGenerator  from "dummy-data-generator";
 dataGenerator({
@@ -25,11 +28,13 @@ dataGenerator({
           type:"word",
           length:10
       }
-  },        
+  },
   isCSV: true,                      // if true will return output as CSV string
 })
 ```
+
 ColumnData Format :-
+
 ```
 interface ColumnData {
   [key: string]: {
@@ -39,8 +44,11 @@ interface ColumnData {
 }
 infinite number of columns supported.
 ```
-## Example 
+
+## Example
+
 1. Array of JSON Objects
+
 ```
 import dataGenerator from 'dummy-data-generator';
 const columnData = {
@@ -82,7 +90,9 @@ console.log(
   }
 ]
 ```
+
 2. CSV String
+
 ```
 import dataGenerator from 'dummy-data-generator';
 const columnData = {
