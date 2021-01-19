@@ -9,5 +9,4 @@ const schema = {
     minProps: 1
 }
 
-
 export const mainValidationSchema = v.compile(schema);

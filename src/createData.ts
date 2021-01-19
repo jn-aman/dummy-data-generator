@@ -25,7 +25,6 @@ export const createWord=(
       }
     }
   
-
   if (capitalize) {
     word = _jsUcfirst(word);
   }

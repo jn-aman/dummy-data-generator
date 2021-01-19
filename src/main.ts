@@ -1,6 +1,7 @@
 import { createParagraph, createWord } from './createData';
 import { mainValidationSchema } from './validation/mainValidation';
 import { subValidationSchema } from './validation/subValidation';
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const faker = require('faker/locale/en');
 // eslint-disable-next-line @typescript-eslint/no-var-requires

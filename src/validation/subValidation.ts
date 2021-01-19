@@ -5,6 +5,7 @@ const v = new Validator({
   useNewCustomCheckerFunction: true,
 });
 
+
 const schema = {
   type: {
     type: 'enum',

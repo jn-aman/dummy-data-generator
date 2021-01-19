@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -17,13 +17,10 @@
     "noImplicitAny": false,
     "noImplicitThis": false,
     "strictNullChecks": false,
-    "declaration": true,
-    "esModuleInterop": true,
-
+    "skipLibCheck": true,
   },
   "include": [
     "src/**/*",
-    "src/**/**/*",
     "__tests__/**/*"
   ]
 }
