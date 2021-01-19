@@ -34,6 +34,7 @@
   "author": "Aman Jain <aman.j@safepath.ai> (https://aman.wiki)",
   "license": "Apache-2.0",
   "dependencies": {
+    "fast-validator": "^1.0.3",
     "tslib": "~2.0.3"
   },
   "volta": {
