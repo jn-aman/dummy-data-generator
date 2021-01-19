@@ -9,6 +9,7 @@ node_modules/
 # Coverage
 coverage
 
+codecov.yml
 # Transpiled files
 build/
 
