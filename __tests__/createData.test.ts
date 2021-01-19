@@ -1,3 +1,5 @@
+/* eslint-disable jest/no-try-expect */
+/* eslint-disable jest/no-conditional-expect */
 import dataGenerator from '../src/main';
 
 describe('createData function', () => {
@@ -22,11 +24,11 @@ describe('createData function', () => {
     };
 
     expect(
-      dataGenerator({
+      (dataGenerator({
         columnData,
         count: 2,
         isCSV: false,
-      }).length,
+      }) as unknown[]).length,
     ).toBe(2);
   });
 
@@ -77,6 +79,11 @@ describe('createData function', () => {
         type: 'paragraph',
         length: 100,
       },
+      cisty: {
+        type: 'enum',
+        length: 2,
+        values: ['sdf', 'asd'],
+      },
     };
 
     expect(
@@ -114,6 +121,41 @@ describe('createData function', () => {
     ).toBe('string');
   });
 
+  test('testing module missing data', () => {
+    const columnData = {};
+
+    try {
+      expect(() =>
+        dataGenerator({
+          columnData,
+          isCSV: true,
+        }),
+      ).toThrow();
+    } catch (e) {
+      // eslint-disable-next-line jest/valid-expect
+      expect(typeof e === 'object');
+    }
+  });
+
+  test('testing module missing sub data', () => {
+    try {
+      expect(() =>
+        dataGenerator({
+          columnData: {
+            name: {},
+            city: {
+              type: 'sdf',
+              length: 7,
+            },
+          },
+          isCSV: true,
+        }),
+      ).toThrow();
+    } catch (e) {
+      // eslint-disable-next-line jest/valid-expect
+      expect(typeof e === 'object');
+    }
+  });
 
   test('testing module missing type and length', () => {
     const columnData = {
@@ -129,6 +171,43 @@ describe('createData function', () => {
       'about-me': {
         type: 'paragraph',
         length: 100,
+      },
+      nadme: {
+        type: 'name',
+        length: 100,
+      },
+      enum: {
+        type: 'enum',
+        length: 100,
+        value: ['asd'],
+      },
+      date: {
+        type: 'date',
+        length: 100,
+      },
+      randomNumber: {
+        type: 'randomNumber',
+        length: 10,
+      },
+      randomNumberOfGivenLength: {
+        type: 'randomNumberOfGivenLength',
+        length: 10,
+      },
+      url: {
+        type: 'url',
+        length: 10,
+      },
+      email: {
+        type: 'email',
+        length: 10,
+      },
+      domainName: {
+        type: 'domainName',
+        length: 10,
+      },
+      ipAddress: {
+        type: 'ipAddress',
+        length: 10,
       },
     };
 
