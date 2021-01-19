@@ -26,7 +26,11 @@ dataGenerator({
       },
       "required-column-name-two":{
           type:"word",
-          length:10
+          length: 10
+      },
+      "required-column-name-two":{
+          type:"enum",
+          value:["high","low"]
       }
   },
   isCSV: true,                      // if true will return output as CSV string
@@ -38,11 +42,30 @@ ColumnData Format :-
 ```
 interface ColumnData {
   [key: string]: {
-    type: string;
-    length: string | number;
+    type?: string;                  // Default Value -> word
+    length?: number;                // Default Value -> 5
+    values?: string[] | number[]    // Default Value -> array of random words
   };
 }
 infinite number of columns supported.
+```
+
+## Supported Types and Required Parameters:
+
+```
+types: [
+      'word',                           // Requires -> length parameter
+      'paragraph',                      // Requires -> length parameter
+      'date',                           // does not depend on any other parameter
+      'randomNumber',                   // does not depend on any other parameter
+      'randomNumberOfGivenLength',      // Requires -> length parameter
+      'domainName',                     // does not depend on any other parameter
+      'email',                          // does not depend on any other parameter
+      'ipAddress',                      // does not depend on any other parameter
+      'name',                           // does not depend on any other parameter
+      'enum',                           // Requires -> values parameter
+      'url',
+    ]
 ```
 
 ## Example
@@ -69,12 +92,20 @@ const columnData = {
     length: 100,
   },
 };
-console.log(
-  dataGenerator({
-    columnData,
-    count: 2,
-  }),
-);
+
+try {
+      // throws an error if required parameters are not set
+      console.log(
+        dataGenerator({
+          columnData,
+          count: 2,
+          isCSV: true,
+        }),
+      );
+    } catch (e) {
+      console.log(e); // return the error
+    }
+    
 // output -> [
   {
     name: 'rocomebifi',
@@ -113,13 +144,19 @@ const columnData = {
     length: 100,
   },
 };
-console.log(
-  dataGenerator({
-    columnData,
-    count: 2,
-    isCSV:true
-  }),
-);
+try {
+      // throws an error if required parameters are not set
+      console.log(
+        dataGenerator({
+          columnData,
+          count: 2,
+          isCSV: true,
+        }),
+      );
+    } catch (e) {
+      console.log(e); // return the error
+    }
+
 // output ->
 name,city,state,about-me
 "werubepiku","delupil","Wecimibupo caronoti.","Cocavu goqi qubugop vizac. Niba mine ku riburutori barocizide celureged cecutuwo cuti tulixo. Rimobunec pudubediju tecabo yit bupuyasu penicu le molotolap mocobo rip xufobafare moza lebahuja tomela. Domenodal mibexe qakol cuducu gace xadaganebu. Doradalopu wogebif nasupotiki. Nenete kibixulopu tebamiqec vomuqar. Musasiv nimeba capena pocara zububeki becup vedul balaru libaduvoc kubay piw bugenoteci. Besac qed. Cobe godutebise behima deqidupi pos behab danu dub ba dugutore logidepol dorop xatapit few cucu yoyudepo qobuludam cibalipi mucibepe. Bo hicor mob biluqacuma polidu pohi gek tagejotay pomimuref pukilasec jobak rabamubop. Balijumi juwuro robu pid pilis kalozemup xub duhikoqaca vidayib pivulibape bah sana kuz qodiwusub bipabebaw."
