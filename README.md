@@ -11,12 +11,20 @@ ipsum text. It returns array of JSON object/CSV string.
 
 ```
 npm i dummy-data-generator
+          or
+yarn add dummy-data-generator
 ```
 
 ## Using the Function
 
 ```
 import  dataGenerator  from "dummy-data-generator";
+
+                      or
+      
+const dataGenerator = require('dummy-data-generator').default;
+
+
 dataGenerator({
   count: 1,                         // Number of "words" or "paragraph"
   columnData: {
@@ -73,7 +81,9 @@ types: [
 1. Array of JSON Objects
 
 ```
-import dataGenerator from 'dummy-data-generator';
+import dataGenerator from 'dummy-data-generator'; //  const dataGenerator = require('dummy-data-generator').default;
+
+                
 const columnData = {
   name: {
     type: 'word',
@@ -125,7 +135,7 @@ try {
 2. CSV String
 
 ```
-import dataGenerator from 'dummy-data-generator';
+import dataGenerator from 'dummy-data-generator'; //  const dataGenerator = require('dummy-data-generator').default;
 const columnData = {
   name: {
     type: 'word',
