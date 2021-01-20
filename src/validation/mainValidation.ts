@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const Validator = require("fastest-validator");
+import Validator from "fastest-validator";
 
 const v = new Validator();
 
