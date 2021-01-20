@@ -1,5 +1,5 @@
 
-import dataGenerator from "../src/main";
+import dataGenerator from "../src/index";
 
 describe("createData function", () => {
   test("testing module array", () => {
