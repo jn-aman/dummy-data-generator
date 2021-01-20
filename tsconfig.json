@@ -63,7 +63,20 @@
     // "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
 
-    /* Advanced Options */
+    /* Advanced Options */    
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
     "skipLibCheck": true,                     /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
