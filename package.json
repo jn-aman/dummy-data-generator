@@ -1,6 +1,6 @@
 {
   "name": "dummy-data-generator",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "Minimalistic dummy-data-generator.",
   "main": "dist/index.js",
   "types": "dist",
@@ -67,5 +67,5 @@
     "type": "git",
     "url": "git+https://github.com/jn-aman/dummy-data-generator"
   },
-  "runkitExampleFilename": "dist/runkit-example.js"
+  "runkitExample": "var dataGenerator = require('dummy-data-generator').default;"
 }
