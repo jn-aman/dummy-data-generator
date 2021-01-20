@@ -1,6 +1,6 @@
 {
   "name": "dummy-data-generator",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "dist/index.js",
   "types": "dist",
   "description": "Minimalistic dummy-data-generator.",
@@ -41,11 +41,9 @@
   "author": "Aman Jain <aman.j@safepath.ai> (https://aman.wiki)",
   "license": "Apache-2.0",
   "dependencies": {
-    "@babel/node": "^7.12.10",
     "faker": "^5.1.0",
     "fastest-validator": "^1.9.0",
     "lodash": "^4.17.20",
-    "ts-node": "^9.1.1",
     "tslib": "~2.0.3"
   },
   "volta": {
