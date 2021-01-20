@@ -1,4 +1,4 @@
-const dataGenerator = require("./index").default;
+const dataGenerator = require("dummy-data-generator").default;
 
 const columnData = {
   name: {

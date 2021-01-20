@@ -1,6 +1,6 @@
 {
   "name": "dummy-data-generator",
-  "version": "1.6.2",
+  "version": "1.6.8",
   "description": "Minimalistic dummy-data-generator.",
   "main": "dist/index.js",
   "types": "dist",
