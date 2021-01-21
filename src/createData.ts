@@ -30,7 +30,7 @@ export const createWord=(
   }
   return word;
 };
-export function createParagraph(length: number): string {
+export const createParagraph = (length: number): string => {
   let paragraph = "";
   let capitalizeNextWord = true;
   for (let i = 0; i < length; i++) {
@@ -47,6 +47,15 @@ export function createParagraph(length: number): string {
     }
   }
   return paragraph.trim() + ".";
+}
+export const randomNumber = (length: number): number => {
+  let text = "";
+  const possible = "123456789";
+  for (let i = 0; i < length; i++) {
+    const sup = Math.floor(Math.random() * possible.length);
+    text += i > 0 && sup == i ? "0" : possible.charAt(sup);
+  }
+  return Number(text);
 }
 
 

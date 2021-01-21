@@ -38,7 +38,7 @@ dataGenerator({
       },
       "required-column-name-two":{
           type:"enum",
-          value:["high","low"]
+          values:["high","low"]
       }
   },
   isCSV: true,                      // if true will return output as CSV string

@@ -1,5 +1,5 @@
 import { ValidationError } from "fastest-validator";
-import { createParagraph, createWord } from "./createData";
+import { createParagraph, createWord, randomNumber } from "./createData";
 import { mainValidationSchema } from "./validation/mainValidation";
 import { subValidationSchema } from "./validation/subValidation";
 
@@ -67,7 +67,7 @@ const getDummyValue = (
       return faker.random.number();
     }
     case "randomNumberOfGivenLength": {
-      return Math.floor(Math.random() * Math.pow(10, length));
+      return randomNumber(length);
     }
     case "url": {
       return String(faker.internet.url());
