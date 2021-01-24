@@ -5,13 +5,6 @@ import { subValidationSchema } from "./validation/subValidation";
 
 import faker from "faker/locale/en";
 import camelCase from "lodash/camelCase";
-/**
- * Returns a Promise<string> that resolves after given time.
- *
- * @param {string} name - A name.
- * @param {number=} [delay=Delays.Medium] - Number of milliseconds to delay resolution of the Promise.
- * @returns {Promise<string>}
- */
 
 interface ColumnData {
   [key: string]: {
