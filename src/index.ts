@@ -57,7 +57,7 @@ const getDummyValue = (
       return faker.date.recent().toString();
     }
     case "randomNumber": {
-      return faker.random.number();
+      return faker.datatype.number();
     }
     case "randomNumberOfGivenLength": {
       return randomNumber(length);
@@ -120,7 +120,7 @@ const dataGenerator = ({
   if (mainValidationSchema(columnData) !== true) {
     return new Error(JSON.stringify(mainValidationSchema(columnData), null, 2));
   }
-  let isSubValid:true | ValidationError[] = true;
+  let isSubValid:true | ValidationError[] | Promise<true | ValidationError[]> = true;
   Object.entries(columnData).map(([, value]) => {
     if (subValidationSchema(value) !== true) {
       isSubValid = subValidationSchema(value);
