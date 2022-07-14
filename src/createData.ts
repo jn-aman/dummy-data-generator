@@ -11,20 +11,20 @@ export const createWord=(
     let currently = "consonants";
     for (let i = 0; i < length; i++) {
       if (currently === "consonants") {
-        word += consonants.substr(
+        word += consonants.substring(
           Math.floor(Math.random() * consonants.length),
           1,
         );
         currently = "vowels";
       } else {
-        word += vowels.substr(
+        word += vowels.substring(
           Math.floor(Math.random() * vowels.length),
           1,
         );
         currently = "consonants";
       }
     }
-  
+
   if (capitalize) {
     word = _jsUcfirst(word);
   }
@@ -53,7 +53,7 @@ export const randomNumber = (length: number): number => {
   const possible = "123456789";
   for (let i = 0; i < length; i++) {
     const sup = Math.floor(Math.random() * possible.length);
-    text += i > 0 && sup == i ? "0" : possible.charAt(sup);
+    text += i > 0 && sup === i ? "0" : possible.charAt(sup);
   }
   return Number(text);
 }
