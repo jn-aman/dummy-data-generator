@@ -1,10 +1,10 @@
 import { ValidationError } from "fastest-validator";
+import {faker} from "@faker-js/faker/locale/en";
+import camelCase from "lodash/camelCase";
 import { createParagraph, createWord, randomNumber } from "./createData";
 import { mainValidationSchema } from "./validation/mainValidation";
 import { subValidationSchema } from "./validation/subValidation";
 
-import faker from "faker/locale/en";
-import camelCase from "lodash/camelCase";
 
 interface ColumnData {
   [key: string]: {
@@ -57,7 +57,7 @@ const getDummyValue = (
       return faker.date.recent().toString();
     }
     case "randomNumber": {
-      return faker.random.number();
+      return faker.datatype.number();
     }
     case "randomNumberOfGivenLength": {
       return randomNumber(length);
@@ -98,7 +98,7 @@ const generateOneObject = (columnData: ColumnData): ObjectData => {
 };
 
 /**
- * Returns a Array of JSON Object of the columns provide. 
+ * Returns a Array of JSON Object of the columns provide.
  * If @param {boolean} isCSV is set true, then it will return
  * a string in CSV format
  *
@@ -120,7 +120,7 @@ const dataGenerator = ({
   if (mainValidationSchema(columnData) !== true) {
     return new Error(JSON.stringify(mainValidationSchema(columnData), null, 2));
   }
-  let isSubValid:true | ValidationError[] = true;
+  let isSubValid:true | ValidationError[] | Promise<true | ValidationError[]> = true;
   Object.entries(columnData).map(([, value]) => {
     if (subValidationSchema(value) !== true) {
       isSubValid = subValidationSchema(value);
